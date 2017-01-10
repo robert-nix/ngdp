@@ -217,7 +217,7 @@ int Remote::DownloadAlloc(Buffer<u8> *buffer, CDNResourceType type, bool isIndex
 		buf.Init();
 		// TODO: lb mutex
 		const char *url = _MakeURL(&buf, type, isIndex, key);
-		int idx = m_cdnHostIndex;
+		idx = m_cdnHostIndex;
 		auto start_time = std::chrono::system_clock::now();
 		if (i == 0) {
 			m_client->Report(NGDP_STATISTIC_DOWNLOAD_STARTED, idx, 0, 0, 0);
