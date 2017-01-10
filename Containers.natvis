@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="ngdp::String">
+		<DisplayString>{m_data,[m_size]}</DisplayString>
+		<StringView>m_data,[m_size]</StringView>
+	</Type>
+	<Type Name="natvis::x4hi">
+		<AlternativeType Name="natvis::x4lo" />
+		<DisplayString Condition="v==0">0</DisplayString>
+		<DisplayString Condition="v==1">1</DisplayString>
+		<DisplayString Condition="v==2">2</DisplayString>
+		<DisplayString Condition="v==3">3</DisplayString>
+		<DisplayString Condition="v==4">4</DisplayString>
+		<DisplayString Condition="v==5">5</DisplayString>
+		<DisplayString Condition="v==6">6</DisplayString>
+		<DisplayString Condition="v==7">7</DisplayString>
+		<DisplayString Condition="v==8">8</DisplayString>
+		<DisplayString Condition="v==9">9</DisplayString>
+		<DisplayString Condition="v==10">a</DisplayString>
+		<DisplayString Condition="v==11">b</DisplayString>
+		<DisplayString Condition="v==12">c</DisplayString>
+		<DisplayString Condition="v==13">d</DisplayString>
+		<DisplayString Condition="v==14">e</DisplayString>
+		<DisplayString>f</DisplayString>
+	</Type>
+	<Type Name="natvis::x8">
+		<DisplayString>{*(natvis::x4hi*)(this)}{*(natvis::x4lo*)(this)}</DisplayString>
+	</Type>
+	<Type Name="natvis::x32">
+		<DisplayString>{((natvis::x8*)this)[0]}{((natvis::x8*)this)[1]}{((natvis::x8*)this)[2]}{((natvis::x8*)this)[3]}</DisplayString>
+	</Type>
+	<Type Name="ngdp::Key">
+		<DisplayString>{((::natvis::x32*)k)[0]}{((::natvis::x32*)k)[1]}{((::natvis::x32*)k)[2]}{((::natvis::x32*)k)[3]}</DisplayString>
+	</Type>
+</AutoVisualizer>
